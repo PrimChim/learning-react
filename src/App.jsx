@@ -11,13 +11,15 @@ function App() {
   const handleClick = () =>{
     setShow(!isShow);
   }
-
-  const greetings = "Hello world to learning react!!!"
-
-  const info = "It's great learning react!!!"
+  
+  const [greetings, setGreetings] = useState("Hello world to learning react!!!");
+  
+  
+  const info = "It's great learning react!!!";
   return (
     <>
       <button onClick={handleClick}>Next</button>
+      <input type="text" value={greetings} onChange={event => setGreetings(event.target.value)} />
       <Greetings text={ isShow? greetings:info }/>
     </>
   )
